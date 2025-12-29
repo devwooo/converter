@@ -1,11 +1,12 @@
 package hello.typeconverter.converter;
 
-import hello.typeconverter.converter.type.IpPort;
+import hello.typeconverter.type.IpPort;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
 
 @Slf4j
-public class StringtoIpPortConverter implements Converter<String, IpPort> {
+public class StringToIpPortConverter implements Converter<String, IpPort> {
+
     @Override
     public IpPort convert(String source) {
         log.info("convert source = {}", source);
@@ -15,4 +16,5 @@ public class StringtoIpPortConverter implements Converter<String, IpPort> {
         int port = Integer.parseInt(split[1]);
         return new IpPort(ip, port);
     }
+
 }
